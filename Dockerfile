@@ -5,12 +5,12 @@ RUN apk update \
     && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git bash \
     && rm -rf /var/cache/apk/* 
 WORKDIR /usr/src/app
-COPY package.json package-lock.json ./
-RUN npm ci && npm cache clean --force
-RUN npm update
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn ./.yarn
+RUN yarn install --frozen-lockfile
 COPY . .
 # Compile the admin and prepare production bundle
-RUN npm run build
+RUN yarn build
 
 # Stage 2: Runtime image with only production deps
 FROM node:18-alpine AS runner
@@ -19,8 +19,9 @@ RUN apk add --no-cache libpng-dev vips-dev bash \
     && rm -rf /var/cache/apk/*
 WORKDIR /usr/src/app
 # Install only production dependencies
-COPY --from=builder /usr/src/app/package.json /usr/src/app/package-lock.json ./
-RUN npm ci --only=production && npm cache clean --force
+COPY --from=builder /usr/src/app/package.json /usr/src/app/yarn.lock /usr/src/app/.yarnrc.yml ./
+COPY --from=builder /usr/src/app/.yarn ./.yarn
+RUN yarn install --frozen-lockfile --production
 # Copy built application and code
 COPY --from=builder /usr/src/app ./
 # Use non-root user for security
@@ -30,4 +31,4 @@ ENV NODE_ENV=production
 # Expose Strapi default port
 EXPOSE 10000
 # Start Strapi in production mode
-CMD ["npm", "run", "start"]
+CMD ["yarn", "start"]
