@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_feature_spotlights",
+  "info": {
+    "displayName": "feature-spotlight",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.features"
+    }
+  }
+}

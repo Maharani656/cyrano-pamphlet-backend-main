@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_sections_feature_sliders",
+  "info": {
+    "displayName": "feature-slider",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "slides": {
+      "displayName": "slides",
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.slides"
+    }
+  }
+}

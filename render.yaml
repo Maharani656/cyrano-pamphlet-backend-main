@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: isrbackend
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: oregon
+    buildCommand: yarn install && yarn build
+    # Removed startCommand - this should be defined in your Dockerfile
+    healthCheckPath: /_health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.9
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: isrbackend
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_JWT_SECRET
+        generateValue: true
+      - key: APP_KEYS
+        generateValue: true
+      - key: API_TOKEN_SALT
+        generateValue: true
+
+databases:
+  - name: isrbackend
+    plan: free

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_testimonials_items",
+  "info": {
+    "displayName": "testimonials-items"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "blocks"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

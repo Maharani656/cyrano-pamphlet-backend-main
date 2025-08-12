@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_global_footer_links",
+  "info": {
+    "displayName": "footerLinks",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "legal",
+        "privacy",
+        "company",
+        "resources"
+      ]
+    }
+  }
+}

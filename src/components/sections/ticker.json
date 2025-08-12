@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_tickers",
+  "info": {
+    "displayName": "ticker",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "displayName": "ticker-items",
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.ticker-items"
+    },
+    "speed": {
+      "type": "integer"
+    }
+  }
+}

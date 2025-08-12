@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_career_job_listings",
+  "info": {
+    "displayName": "career-job-listings",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "positions": {
+      "displayName": "JobPosition",
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.job-position"
+    }
+  }
+}

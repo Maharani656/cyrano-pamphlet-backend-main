@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_feature_grids",
+  "info": {
+    "displayName": "feature-grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "features": {
+      "displayName": "features",
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.features"
+    }
+  }
+}

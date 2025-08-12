@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_sections_career_highlights",
+  "info": {
+    "displayName": "career-highlights",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "highlights": {
+      "displayName": "highlights",
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.highlights"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

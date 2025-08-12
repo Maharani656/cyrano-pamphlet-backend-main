@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_sections_career_visions",
+  "info": {
+    "displayName": "career-vision"
+  },
+  "options": {},
+  "attributes": {
+    "richText": {
+      "type": "blocks"
+    }
+  }
+}
